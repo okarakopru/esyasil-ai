@@ -5,6 +5,9 @@ import { useFirebaseAuth } from './firebase';
 import { ProcessedImage } from './types';
 import { fileToBase64, processImagesViaFunction } from './services/gemini';
 import { auth } from './firebase';
+import demoOriginal from "./assets/demo_original.jpg";
+import demoClean from "./assets/demo_clean.jpg";
+
 
 export default function App() {
   const { user, loading, login, onLogout } = useFirebaseAuth();
@@ -141,9 +144,9 @@ export default function App() {
                 </div>
                 <div className="p-6">
                   <ImageSlider 
-                    beforeImage="/assets/demo_original.jpg" 
-                    afterImage="/assets/demo_clean.jpg" 
-                  />
+                    beforeImage={demoOriginal}
+                    afterImage={demoClean}
+                    />
                 </div>
               </div>
             )}
